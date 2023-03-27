@@ -37,26 +37,26 @@
                   <table class="table table-hover text-nowrap">
                     <tbody>
                       <tr>
-                        <th><a href="{{ route('admin.category.index') }}">В Категории</a></th>
+                        <th><a href="{{ route('admin.tag.index') }}">В Тэги</a></th>
                         <td></td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
                         <th>ID</th>
-                        <td>{{ $category->id}}</td>
+                        <td>{{ $tag->id}}</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
                         <th>Название</th>
-                        <td>{{ $category->title }}</td>
+                        <td>{{ $tag->title }}</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
                         <th>Дата создания</th>
-                        <td>{{ $category->created_at }}</td>
+                        <td>{{ $tag->created_at }}</td>
                       </tr>
                     </tbody>
                   </table>

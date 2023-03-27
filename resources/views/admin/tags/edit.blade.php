@@ -31,12 +31,12 @@
               @csrf
               @method('put')
               <div class="form-group">
-                <input type="text" class="form-control" name="title" placeholder="Название категории" value="{{$tag->title}}">
+                <input type="text" class="form-control" name="title" placeholder="Названия тэгов" value="{{$tag->title}}">
                 @error("title")
                 <div class="text-danger">Это поле не менее 3-х и не более 63 символов</div>
                 @enderror
               </div>
-              <input type="submit" value="Изменить Tag" class="btn btn-success">
+              <input type="submit" value="Change Tag" class="btn btn-success">
             </form>
           </div>
         </div>
