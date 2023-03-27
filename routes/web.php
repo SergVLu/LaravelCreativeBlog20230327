@@ -29,7 +29,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('/{category}/edit', 'EditController')->name('admin.category.edit');
         Route::put('/{category}', 'UpdateController')->name('admin.category.update');
         Route::delete('/{category}', 'DeleteController')->name('admin.category.delete');
-
     });
     Route::group(['namespace' => 'Tag','prefix' => 'tags'], function () {
         Route::get('/', 'IndexController')->name('admin.tag.index');
@@ -39,7 +38,6 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('/{tag}/edit', 'EditController')->name('admin.tag.edit');
         Route::put('/{tag}', 'UpdateController')->name('admin.tag.update');
         Route::delete('/{tag}', 'DeleteController')->name('admin.tag.delete');
-
     });
 });
 
