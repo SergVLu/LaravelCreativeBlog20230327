@@ -27,19 +27,23 @@
         <!-- Small boxes (Stat box) -->
         <div class="row ">          
           <div class="col-12">
-            <form action="{{ route('admin.post.store')}}" class="w-25" method="post">
+            <form action="{{ route('admin.post.store')}}" method="post">
               @csrf
-              <div class="form-group">
+              <div class="form-group w-25">
                 <input type="text" class="form-control"  name="title" placeholder="Enter Title" value="{{old('title')}}">
-                <input type="textarea" class="form-control"  name="content" placeholder="Enter Content" value="{{old('content')}}">
                 @error("title")
-                <div class="text-danger">Title обязательно и не более 63 символов</div>
-                @enderror
-                @error("content")
-                <div class="text-danger">Content обязательно и не менее 10 символов</div>
+                  <div class="text-danger">Title обязательно и не более 63 символов</div>
                 @enderror
               </div>
-              <input type="submit" value="Сохранить Post" class="btn btn-success">
+              <div class="form-group">
+                <textarea id="summernote" name="content" placeholder="Enter Content" >{{old('content')}}</textarea>
+                @error("content")
+                  <div class="text-danger">Content обязательно и не менее 10 символов</div>
+                @enderror
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Сохранить Post" class="btn btn-success">
+              </div>
             </form>
           </div>
         </div>
