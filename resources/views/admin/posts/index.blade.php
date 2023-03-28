@@ -8,11 +8,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h2 class="m-0">Категории</h2>
+            <h2 class="m-0">Посты</h2>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('main')}}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('admin')}}">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->
@@ -27,7 +27,7 @@
         <!-- Small boxes (Stat box) -->
         <div class="row ">          
           <div class="col-1 mb-2">
-            <a href="{{ route('admin.category.create') }}" class="btn btn-primary mb-2">Добавить</a>
+            <a href="{{ route('admin.post.create') }}" class="btn btn-primary mb-2">Добавить</a>
               <!-- /.card-body -->
           </div>
         </div>
@@ -41,24 +41,26 @@
                       <tr>
                         <th>ID</th>
                         <th>Title</th>
+                        <th>Content</th>
                         <th>Date-create</th>
                         <th colspan='3' class='text-center'>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($categories as $cat)
+                      @foreach($posts as $post)
                       <tr>
-                        <td><?=$cat['id']?></td>
-                        <td>{{ $cat->title }}</td>
-                        <td>{{ $cat->created_at }}</td>
+                        <td><?=$post['id']?></td>
+                        <td>{{ $post->title }}</td>
+                        <td>{{ $post->content }}</td>
+                        <td>{{ $post->created_at }}</td>
                         <td>
-                          <a href="{{ route('admin.category.show',$cat->id)}}"><i class="far fa-eye fa-lg"></i></a> 
+                          <a href="{{ route('admin.post.show',$post->id)}}"><i class="far fa-eye fa-lg"></i></a> 
                         </td> 
                         <td>
-                          <a href="{{ route('admin.category.edit',$cat->id)}}" class='text-warning'><i class="fas fa-pencil-alt"></i></a> 
+                          <a href="{{ route('admin.post.edit',$post->id)}}" class='text-warning'><i class="fas fa-pencil-alt"></i></a> 
                         </td> 
                         <td>
-                          <form action="{{ route('admin.category.delete',$cat->id)}}" method = 'post' >
+                          <form action="{{ route('admin.post.delete',$post->id)}}" method = 'post' >
                             @csrf
                             @method('delete')
                             <button type="submit" class="text-danger border-0 bg-transparent"><i class="far fa-trash-alt"></i></button>

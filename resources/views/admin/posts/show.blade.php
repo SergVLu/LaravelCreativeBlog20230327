@@ -8,9 +8,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6  d-flex align-items-center">
-            <h2 class="m-0 mr-3">Тэг: {{ $tag->title }} </h2>
-            <a href="{{ route('admin.tag.edit',$tag->id)}} " class='text-warning'><i class="fas fa-pencil-alt"></i></a> 
-            <form action="{{ route('admin.tag.delete',$tag->id)}}" method = 'post' >
+            <h2 class="m-0 mr-3">Пост: {{ $post->title }} </h2>
+            <a href="{{ route('admin.post.edit',$post->id)}} " class='text-warning'><i class="fas fa-pencil-alt"></i></a> 
+            <form action="{{ route('admin.post.delete',$post->id)}}" method = 'post' >
               @csrf
               @method('delete')
               <button type="submit" class="text-danger border-0 bg-transparent"> <i class="far fa-trash-alt ml-3"></i></button>
@@ -37,26 +37,32 @@
                   <table class="table table-hover text-nowrap">
                     <tbody>
                       <tr>
-                        <th><a href="{{ route('admin.tag.index') }}">В Тэги</a></th>
+                        <th><a href="{{ route('admin.post.index') }}">В Посты</a></th>
                         <td></td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
                         <th>ID</th>
-                        <td>{{ $tag->id}}</td>
+                        <td>{{ $post->id}}</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
                         <th>Название</th>
-                        <td>{{ $tag->title }}</td>
+                        <td>{{ $post->title }}</td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <th>Содержание</th>
+                        <td>{{ $post->content }}</td>
                       </tr>
                     </tbody>
                     <tbody>
                       <tr>
                         <th>Дата создания</th>
-                        <td>{{ $tag->created_at }}</td>
+                        <td>{{ $post->created_at }}</td>
                       </tr>
                     </tbody>
                   </table>

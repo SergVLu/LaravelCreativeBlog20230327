@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('main')}}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('admin')}}">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->
@@ -30,7 +30,7 @@
             <form action="{{ route('admin.tag.store')}}" class="w-25" method="post">
               @csrf
               <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Enter name of tag" value="{{old('title')}}">
+                <input type="text" class="form-control"  name="title" placeholder="Enter name of tag" value="{{old('title')}}">
                 @error("title")
                 <div class="text-danger">Это поле не менее 3-х и не более 63 символов</div>
                 @enderror
