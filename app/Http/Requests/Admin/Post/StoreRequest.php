@@ -23,7 +23,9 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:63|min:3',
-            'content' => 'required|string|min:16'
+            'content' => 'required|string|min:16',
+            'preview_image' => 'required|file',
+            'main_image' => 'required|file'
         ];
     }
 }
