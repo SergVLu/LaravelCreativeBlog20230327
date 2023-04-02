@@ -61,6 +61,12 @@
                     </tbody>
                     <tbody>
                       <tr>
+                        <th>Категория</th>
+                        <td>{{ $post->category_id }}</td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
                         <th>Дата создания</th>
                         <td>{{ $post->created_at }}</td>
                       </tr>
