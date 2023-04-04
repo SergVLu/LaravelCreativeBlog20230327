@@ -40,19 +40,16 @@
                     <thead>
                       <tr>
                         <th>ID</th>
+                        <th colspan='3' class='text-center'>Actions</th>
                         <th>Title</th>
                         <th>Content</th>
                         <th>Date-create</th>
-                        <th colspan='3' class='text-center'>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach($posts as $post)
                       <tr>
                         <td><?=$post['id']?></td>
-                        <td>{{ $post->title }}</td>
-                        <td>{{ $post->content }}</td>
-                        <td>{{ $post->created_at }}</td>
                         <td>
                           <a href="{{ route('admin.post.show',$post->id)}}"><i class="far fa-eye fa-lg"></i></a> 
                         </td> 
@@ -66,6 +63,9 @@
                             <button type="submit" class="text-danger border-0 bg-transparent"><i class="far fa-trash-alt"></i></button>
                           </form>
                         </td> 
+                        <td>{{ $post->title }}</td>
+                        <td>{{ $post->content }}</td>
+                        <td>{{ $post->created_at }}</td>
                       </tr>
                       @endforeach 
                     </tbody>
