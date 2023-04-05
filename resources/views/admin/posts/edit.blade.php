@@ -33,7 +33,7 @@
               <div class="form-group w-40">
                 <input type="text" class="form-control"  name="title" value="{{$post->title}}">
                 @error("title")
-                  <div class="text-danger">Title обязательно и не более 63 символов</div>
+                  <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
               <div class="form-group w-75">
@@ -45,7 +45,7 @@
                   @endif
                 </textarea>
                 @error("content")
-                  <div class="text-danger">Content обязательно и не менее 10 символов</div>
+                  <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
               <div class="form-group w-75">
@@ -62,7 +62,7 @@
                     <span class="input-group-text">Выбрано для загрузки</span>
                   </div>
                   @error("preview_image")
-                    <div class="text-danger">Картинка превью обязательна</div>
+                    <div class="text-danger">{{ $message }}</div>
                   @enderror
                 </div>
                 <label for="exampleInputFile">Добавить главное изображение</label>
@@ -78,7 +78,7 @@
                     <span class="input-group-text">Выбрано для загрузки</span>
                   </div>
                   @error("main_image")
-                    <div class="text-danger">Основная картинка обязательна</div>
+                    <div class="text-danger">{{ $message }}</div>
                   @enderror
                 </div>
               </div>
@@ -92,7 +92,7 @@
                   @endforeach
                 </select>
                 @error("category_id")
-                  <div class="text-danger">Выберите категорию из списка</div>
+                  <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
               <div class="col-md-6">
@@ -103,6 +103,9 @@
                       <option {{ is_array($post->tags->pluck('id')->toArray()) && in_array($tag->id, $post->tags->pluck('id')->toArray()) ? ' selected':''}} value="{{ $tag->id }}">{{ $tag->title }}</option>
                     @endforeach
                   </select>
+                  @error("tag_ids")
+                    <div class="text-danger">{{ $message }}</div>
+                  @enderror
                 </div>
               </div>
               <div class="form-group  mt-2">

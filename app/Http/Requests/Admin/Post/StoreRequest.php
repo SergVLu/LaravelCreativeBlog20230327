@@ -31,4 +31,24 @@ class StoreRequest extends FormRequest
             'tag_ids.*' => 'nullable|integer|exists:tags,id'
         ];
     }
+    
+    public function messages() {
+        return [
+          'title.required' => 'Это поле необходимо для заполнения',  
+          'title.string' => 'Данные должны соответствовать строковому типу',  
+          'title.max' => 'Длина не более 63 символов',  
+          'title.min' => 'Длина не менее 3 символов',  
+          'content.required' => 'Это поле необходимо для заполнения',  
+          'content.string' => 'Данные должны соответствовать строковому типу',  
+          'content.min' => 'Длина не менее 16 символов',  
+          'preview_image.required' => 'Это поле необходимо для заполнения',  
+          'preview_image.file' => 'Необходимо выбрать файл',  
+          'main_image.required' => 'Это поле необходимо для заполнения',  
+          'main_image.file' => 'Необходимо выбрать файл',  
+          'category_id.required' => 'Это поле необходимо для заполнения',  
+          'category_id.exists' => 'Категорию нужно выбрать из предложенных',  
+          'tag_ids.exists' => 'Категорию нужно выбрать из предложенных',  
+          'tag_ids.array' => 'Тэги должны отправляться массивом',  
+        ];
+    }
 }
