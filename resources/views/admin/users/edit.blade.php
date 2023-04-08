@@ -31,10 +31,34 @@
               @csrf
               @method('put')
               <div class="form-group">
+                <label for="email">Изменить почту</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email of user" value="{{$user->email}}">
+                @error("email")
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group">
+                <label for="name">Изменить Имя</label>
                 <input type="text" class="form-control" name="name" placeholder="Пользователь" value="{{$user->name}}">
                 @error("name")
-                <div class="text-danger">Это поле обязательное, не менее 3-х и не более 15 символов</div>
+                <div class="text-danger">{{ $message }}</div>
                 @enderror
+              </div>
+              <div class="form-group w-75">
+                <label>Выберите роль</label>
+                <select class="form-control" name='role'>
+                  @foreach($roles as $id => $role)
+                    <option value="{{ $id }}" 
+                    {{ $id == $user->role ? 'selected' : '' }}
+                    >{{ $role }}</option>
+                  @endforeach
+                </select>
+                @error("role")
+                  <div class="text-danger">{{ $message }}</div>
+                @enderror
+              </div>
+              <div>
+                <input type="hidden" name="user_id" value="{{$user->id}}" >
               </div>
               <input type="submit" value="Изменить пользователя" class="btn btn-success">
             </form>

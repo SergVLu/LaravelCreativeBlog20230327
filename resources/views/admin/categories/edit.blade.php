@@ -33,7 +33,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" name="title" placeholder="Название категории" value="{{$category->title}}">
                 @error("title")
-                <div class="text-danger">Это поле обязательное, не менее 3-х и не более 15 символов</div>
+                <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
               <input type="submit" value="Изменить категорию" class="btn btn-success">

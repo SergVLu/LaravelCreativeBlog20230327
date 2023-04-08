@@ -30,12 +30,41 @@
             <form action="{{ route('admin.user.store')}}" class="w-25" method="post">
               @csrf
               <div class="form-group">
+                <label for="name">Введите Имя</label>
+
                 <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Enter name of user" value="{{old('name')}}">
                 @error("name")
-                <div class="text-danger">Это поле обязательное, не менее 3-х и не более 15 символов</div>
+                <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
-              <input type="submit" value="Сохранить пользователя" class="btn btn-success">
+              <div class="form-group">
+                <label for="name">Введите почту</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email of user" value="{{old('email')}}">
+                @error("email")
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group">
+                <label for="name">Введите пароль</label>                
+                <input type="text" class="form-control" id="exampleInputEmail1" name="password" placeholder="Enter password" value="{{old('password')}}">
+                @error("password")
+                <div class="text-danger">{{ $message }}</div>
+                @enderror
+              </div>
+              <div class="form-group w-75">
+                <label>Выберите роль</label>
+                <select class="form-control" name='role'>
+                  @foreach($roles as $id => $role)
+                    <option value="{{ $id }}" 
+                    {{ $id == old('role') ? 'selected' : '' }}
+                    >{{ $role }}</option>
+                  @endforeach
+                </select>
+                @error("role")
+                  <div class="text-danger">{{ $message }}</div>
+                @enderror
+              </div>
+                <input type="submit" value="Сохранить пользователя" class="btn btn-success">
             </form>
           </div>
         </div>

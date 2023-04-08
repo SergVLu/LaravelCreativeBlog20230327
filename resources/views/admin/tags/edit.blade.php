@@ -33,7 +33,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" name="title" placeholder="Названия тэгов" value="{{$tag->title}}">
                 @error("title")
-                <div class="text-danger">Это поле не менее 3-х и не более 63 символов</div>
+                <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
               <input type="submit" value="Change Tag" class="btn btn-success">

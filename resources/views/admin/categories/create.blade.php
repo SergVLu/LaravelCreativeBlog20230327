@@ -32,7 +32,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Enter name of category" value="{{old('title')}}">
                 @error("title")
-                <div class="text-danger">Это поле обязательное, не менее 3-х и не более 15 символов</div>
+                <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
               <input type="submit" value="Сохранить категорию" class="btn btn-success">

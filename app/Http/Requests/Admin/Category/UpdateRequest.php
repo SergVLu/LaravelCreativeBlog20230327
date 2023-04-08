@@ -25,4 +25,13 @@ class UpdateRequest extends FormRequest
             'title' => 'required|string|max:15|min:3'
         ];
     }
+
+    public function messages() {
+        return [
+          'title.required' => 'Это поле необходимо для заполнения',  
+          'title.string' => 'Данные должны соответствовать строковому типу',  
+          'title.max' => 'Длина не более 15 символов',
+          'title.min' => 'Длина не менее 3 символов'
+        ];
+    }
 }
