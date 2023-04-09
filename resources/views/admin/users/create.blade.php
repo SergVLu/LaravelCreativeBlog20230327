@@ -44,13 +44,13 @@
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
-              <div class="form-group">
+<!--              <div class="form-group">
                 <label for="name">Введите пароль</label>                
                 <input type="text" class="form-control" id="exampleInputEmail1" name="password" placeholder="Enter password" value="{{old('password')}}">
                 @error("password")
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
-              </div>
+              </div>-->
               <div class="form-group w-75">
                 <label>Выберите роль</label>
                 <select class="form-control" name='role'>
