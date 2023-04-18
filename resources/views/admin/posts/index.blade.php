@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('admin')}}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('home')}}">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->
@@ -63,8 +63,8 @@
                             <button type="submit" class="text-danger border-0 bg-transparent"><i class="far fa-trash-alt"></i></button>
                           </form>
                         </td> 
-                        <td>{{ $post->title }}</td>
-                        <td>{{ $post->content }}</td>
+                        <td>{{ substr($post->title, 0, 10) }}</td>
+                        <td>{{ substr($post->content, 0, 15) }} >>></td>
                         <td>{{ $post->created_at }}</td>
                       </tr>
                       @endforeach 

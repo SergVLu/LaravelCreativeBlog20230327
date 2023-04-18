@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Controllers\Admin\Post\BaseController;
 
-
 class IndexController extends BaseController{
     public function __invoke()
     {

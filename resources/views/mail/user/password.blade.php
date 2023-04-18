@@ -1,4 +1,3 @@
-<x-mail::message>
-# Introduction
-Ваш пароль: {{$password}}
-</x-mail::message>
+@component('mail::message')
+Ваш HOBbIu пароль: {{$password}}
+@endcomponent

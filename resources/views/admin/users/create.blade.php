@@ -12,7 +12,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('main')}}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('home')}}">Home</a></li>
               <li class="breadcrumb-item active">Dashboard v1</li>
             </ol>
           </div><!-- /.col -->
@@ -32,25 +32,20 @@
               <div class="form-group">
                 <label for="name">Введите Имя</label>
 
-                <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Enter name of user" value="{{old('name')}}">
+                <input type="text" class="form-control"  name="name" placeholder="Name" value="{{old('name')}}">
                 @error("name")
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
+
               <div class="form-group">
                 <label for="name">Введите почту</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter email of user" value="{{old('email')}}">
+                <input type="email" class="form-control"  name="email" placeholder="Email" value="{{old('email')}}">
                 @error("email")
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
-<!--              <div class="form-group">
-                <label for="name">Введите пароль</label>                
-                <input type="text" class="form-control" id="exampleInputEmail1" name="password" placeholder="Enter password" value="{{old('password')}}">
-                @error("password")
-                <div class="text-danger">{{ $message }}</div>
-                @enderror
-              </div>-->
+
               <div class="form-group w-75">
                 <label>Выберите роль</label>
                 <select class="form-control" name='role'>
