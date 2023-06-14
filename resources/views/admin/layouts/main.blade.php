@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE | Dashboard</title>
+  <title>Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -58,7 +58,7 @@
   @yield('content')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2023+ <a href="https://github.com/SergVLu/LaravelCreativeBlog20230316">LaravelCreativeBlog20230316</a>.</strong>
+    <strong>Copyright &copy; 2023+ <a href="https://github.com/SergVLu/LaravelCreativeBlog20230316">LaravelCreativeBlog20230327</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>AdminLTE <i>version</i></b> 3.2.0

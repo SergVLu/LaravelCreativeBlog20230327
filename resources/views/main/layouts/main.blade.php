@@ -31,6 +31,9 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ route('home') }}">Log <span class="sr-only">(current)</span></a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/admin">Admin <span class="sr-only">(current)</span></a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
                         </li>

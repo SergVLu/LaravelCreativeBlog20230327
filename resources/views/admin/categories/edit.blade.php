@@ -8,12 +8,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Редактирование Категории</h1>
+            <h1 class="m-0">Редактирование Категории: {{ $category->title }} </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('main')}}">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item"><a href="{{ route('admin.main.index')}}">Главная</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('admin.category.index')}}">Категории</a></li>
+              <li class="breadcrumb-item active">Редактирование Категории</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->

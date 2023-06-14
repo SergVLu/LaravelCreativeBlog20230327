@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6  d-flex align-items-center">
-            <h2 class="m-0 mr-3">Тэг: {{ $tag->title }} </h2>
+            <h2 class="m-0 mr-3">Просмотр Тэга: {{ $tag->title }} </h2>
             <a href="{{ route('admin.tag.edit',$tag->id)}} " class='text-warning'><i class="fas fa-pencil-alt"></i></a> 
             <form action="{{ route('admin.tag.delete',$tag->id)}}" method = 'post' >
               @csrf
@@ -18,8 +18,9 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('home')}}">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
+              <li class="breadcrumb-item"><a href="{{ route('admin.main.index')}}">Главная</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('admin.tag.index')}}">Теги</a></li>
+              <li class="breadcrumb-item active">Просмотр Тэга</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->

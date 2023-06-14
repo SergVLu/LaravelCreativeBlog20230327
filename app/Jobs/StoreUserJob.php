@@ -23,7 +23,6 @@ use Illuminate\Support\Str;
 class StoreUserJob implements ShouldQueue
 {
 
-    private $password;
     private $data;
 
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
