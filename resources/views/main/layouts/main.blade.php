@@ -29,7 +29,7 @@
                             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('home') }}">Log <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('home') }}">Logining <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="/admin">Admin <span class="sr-only">(current)</span></a>
