@@ -9,15 +9,11 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 
-class IndexController extends Controller
+class DeleteController extends Controller
 {
-    public function __construct() {
-//        dd('888');
-        
-    }
-
-        public function __invoke()
+    public function __invoke(Post $post)
     {
-        return view('personal.liked.index');
+        auth()->user()->likedPosts()->detach($post->id);
+        return redirect()->route('personal.liked.index');
     }
 }
