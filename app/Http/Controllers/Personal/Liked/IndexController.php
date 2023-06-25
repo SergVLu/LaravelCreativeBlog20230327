@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Main;
+namespace App\Http\Controllers\Personal\Liked;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,12 +18,6 @@ class IndexController extends Controller
 
         public function __invoke()
     {
-        $data =[];
-        $data['usersCount'] = User::all()->count();
-        $data['postsCount'] = Post::all()->count();
-        $data['tagsCount'] = Tag::all()->count();
-        $data['categoriesCount'] = Category::all()->count();
-        
-        return view('admin.main.index', compact('data'));
+        return view('personal.liked.index');
     }
 }
