@@ -1,19 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Personal\Liked;
+namespace App\Http\Controllers\Personal\Comment;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Category;
-use App\Models\Post;
-use App\Models\Tag;
+use App\Models\Comment;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Post $post)
+    public function __invoke(Comment $comment)
     {
-        auth()->user()->likedPosts()->detach($post->id);
-        return redirect()->route('personal.liked.index');
+        $comment->delete();
+        return redirect()->route('personal.comment.index');
     }
 }

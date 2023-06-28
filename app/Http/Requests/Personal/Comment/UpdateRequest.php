@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Category;
+namespace App\Http\Requests\Personal\Comment;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,16 +22,16 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:15|min:3'
+            'message' => 'string|max:105|min:3',
+//            'message' => 'string|required'
         ];
     }
 
     public function messages() {
         return [
-          'title.required' => 'Это поле необходимо для заполнения',  
-          'title.string' => 'Данные должны соответствовать строковому типу',  
-          'title.max' => 'Длина не более 15 символов',
-          'title.min' => 'Длина не менее 3 символов'
+          'message.string' => 'Данные должны соответствовать строковому типу',  
+          'message.max' => 'Длина не более 105 символов',
+          'message.min' => 'Длина не менее 3 символов'
         ];
     }
 }

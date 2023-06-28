@@ -1,21 +1,17 @@
 <?php
+namespace App\Http\Controllers\Personal\Comment;
 
-namespace App\Http\Controllers\Admin\Post;
-
+use App\Models\Comment;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Post;
-use App\Http\Requests\Admin\Post\UpdateRequest;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\Admin\Post\BaseController;
+use App\Http\Requests\Personal\Comment\UpdateRequest;
 
-class UpdateController extends BaseController
+
+class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, Post $post)
+    public function __invoke(UpdateRequest $request, Comment $comment)
     {
         $data = $request->validated();
-        $post= $this->service->update($data,$post);
-        
-        return view('admin.posts.show', compact('post'));
+        $comment->update($data);
+        return redirect()->route('personal.comment.index');
     }
 }

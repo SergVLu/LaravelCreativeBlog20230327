@@ -1,20 +1,13 @@
 <?php
-
-namespace App\Http\Controllers\Admin\Post;
+namespace App\Http\Controllers\Personal\Comment;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Post;
-use App\Models\Category;
-use App\Models\Tag;
+use App\Models\Comment;
 
 class EditController extends Controller
 {
-    public function __invoke(Post $post)
+    public function __invoke(Comment $comment)
     {
-        $categories = Category::all();
-        $tags = Tag::all();
-        // dd($post->tags->pluck('id'));
-        return view('admin.posts.edit',compact('post','categories','tags'));
+        return view('personal.comment.edit',compact('comment'));
     }
 }
